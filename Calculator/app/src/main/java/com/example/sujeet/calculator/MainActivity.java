@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import android.widget.AbsListView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -130,7 +130,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            int c = 0;
+            int c ;
+        c=0;
 
 
 
@@ -261,7 +262,20 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            t1.setText("Invalid Operation");
+
+
+
+
+
+
+
+
+            t1.setText("Invalid Operation or Input");
+
+
+
+
+            
             test="";
         }
     }
