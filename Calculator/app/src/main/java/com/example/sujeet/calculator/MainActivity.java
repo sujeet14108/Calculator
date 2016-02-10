@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 double v = parseTerm();
                 for (;;) {
                     eatSpace();
-                    if (c == '+') { // addition
+                    if (c == '+') {
                         eatChar();
                         v += parseTerm();
-                    } else if (c == '-') { // subtraction
+                    } else if (c == '-') {
                         eatChar();
                         v -= parseTerm();
                     } else {
@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 double v = parseFactor();
                 for (;;) {
                     eatSpace();
-                    if ((c == '/')||(c =='%')) { // division
+                    if ((c =='%')||(c == '/')) {
                         eatChar();
                         v /= parseFactor();
-                    } else if (c == '*' || c == '(') { // multiplication
+                    } else if (c == '*' || c == '(') {
                         if (c == '*') eatChar();
                         v *= parseFactor();
                     } else {
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 double v;
                 boolean negate = false;
                 eatSpace();
-                if (c == '+' || c == '-') { // unary plus & minus
+                if (c == '+' || c == '-') {
                     negate = c == '-';
                     eatChar();
                     eatSpace();
@@ -99,20 +99,12 @@ public class MainActivity extends AppCompatActivity {
                     eatChar();
                     v = Math.pow(v, parseFactor());
                 }
-                if (negate) v = -v; // unary minus is applied after exponentiation; e.g. -3^2=-9
+                if (negate) v = -v;
                 return v;
             }
         }
         return new Parser().parse();
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -149,8 +141,7 @@ public class MainActivity extends AppCompatActivity {
             int d = v.getId();
             System.out.println(d);
         try {
-            // c=Integer.parseInt(e1.getText().toString()) +Integer.parseInt(e2.getText().toString());
-            //  t1.setText(Integer.toString(c));
+
             switch (v.getId()) {
                 case R.id.one:
                     test = test + "1";
@@ -189,12 +180,7 @@ public class MainActivity extends AppCompatActivity {
                     t1.setText(test);
                     break;
                 case R.id.mipl:
-                    /*
-                    double x = Double.parseDouble(test);
-                    x = -1 * x;
 
-                    test = Double.toString(x);
-                    */
                     if(test.substring(test.length()-1)=="-")
                    test=test.substring(0,test.length()-2)+test.substring(test.length());
                    else
@@ -203,8 +189,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.plus:
 
-                    // c=c+Integer.parseInt(test);
-                    //   int op1=Integer.parseInt(test);
 
                     test = test + "+";
                     t1.setText(test);
@@ -264,9 +248,7 @@ public class MainActivity extends AppCompatActivity {
                     test = Double.toString(ans);
                     t1.setText(Double.toString(ans));
                     String[] a = test.split("");
-                    //  ArrayList<String> ar =new ArrayList<String>();
 
-                    //    int ans=Integer.parseInt(test);
 
                     break;
 
@@ -276,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-           // t1.setText(#f40c0c);
+
 
 
             t1.setText("Invalid Operation");
