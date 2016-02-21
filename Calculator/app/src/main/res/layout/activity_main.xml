@@ -352,6 +352,8 @@
             android:layout_weight="1"
             android:text="+"
             android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
             android:id="@+id/plus"
             android:clickable="true"
             android:onClick="onclick"/>
